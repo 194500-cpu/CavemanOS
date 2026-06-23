@@ -62,16 +62,19 @@ function makedragElement(element) {
   }
 }
 
-var campfireScreen = document.querySelector("#campfire")
-var campfireClose = document.querySelector("#campfireclose")
-var campfireOpen = document.querySelector("#campfireIcon")
+var campfireScreen = document.querySelector("#campfire");
+var campfireClose = document.querySelector("#campfireclose");
+var campfireOpen = document.querySelector("#campfireIcon");
 
 
 function closeWindow(element) {
-  element.style.display = "none"
+  element.style.display = "none";
+  
+  
 }
 function openWindow(element) {
-  element.style.display = "flex"
+  element.style.display = "block";
+  
 }
 
 campfireClose.addEventListener("click", function() {
@@ -81,3 +84,9 @@ campfireClose.addEventListener("click", function() {
 campfireOpen.addEventListener("click", function() {
   openWindow(campfireScreen);
 });
+
+let image = document.getElementById('campfireIMG');
+image.addEventListener('click', function() {
+            //needs fixing
+            this.classList.toggle('color-tint'); 
+        });
