@@ -9,7 +9,7 @@ function updateTime() {
 
 // Make the DIV element draggable:
 makedragElement(document.getElementById("campfire"));
-
+makedragElement(document.getElementById("welcome"));
 // Step 1: Define a function called `dragElement` that makes an HTML element draggable.
 function makedragElement(element) {
   // Step 2: Set up variables to keep track of the element's position.
@@ -66,15 +66,16 @@ var campfireScreen = document.querySelector("#campfire");
 var campfireClose = document.querySelector("#campfireclose");
 var campfireOpen = document.querySelector("#campfireIcon");
 
+var welcomeScreen = document.querySelector("#welcome");
+var welcomeClose = document.querySelector("#welcomeclose");
+var welcomeOpen = document.querySelector("#welcomeIcon");
+
 
 function closeWindow(element) {
   element.style.display = "none";
-  
-  
 }
 function openWindow(element) {
   element.style.display = "block";
-  
 }
 
 campfireClose.addEventListener("click", function() {
@@ -85,8 +86,29 @@ campfireOpen.addEventListener("click", function() {
   openWindow(campfireScreen);
 });
 
+welcomeClose.addEventListener("click", function() {
+  closeWindow(welcomeScreen);
+});
+
+welcomeOpen.addEventListener("click", function() {
+  openWindow(welcomeScreen);
+});
+
 let image = document.getElementById('campfireIMG');
 image.addEventListener('click', function() {
             //needs fixing
             this.classList.toggle('color-tint'); 
         });
+
+
+
+function shareMessage() {
+  let message = document.querySelector('input[id="message"]').value;
+  
+}
+
+//doing some supabase stuff
+
+const url = "https://tgpokcloaaefyrqzxbob.supabase.co";
+const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRncG9rY2xvYWFlZnlycXp4Ym9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyNDA4NzgsImV4cCI6MjA5NzgxNjg3OH0.JvkSko3QizB2kYnHjTM2qHoW3nNj65BjXPw2k5ieGzk";
+const Supabase = supabase.createClient(url, key);
