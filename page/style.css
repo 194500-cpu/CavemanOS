@@ -1,3 +1,7 @@
+#campfireMessages {
+    overflow-y: auto;
+    height: 25vw;
+}
 .selected {
   filter: brightness(0.5)
 }
@@ -6,6 +10,7 @@
     overflow-y: auto;
     height: 25rem;
 }
+
 body {
     font-family: 'Roboto', sans-serif;
     background-image: url('./cavewall.jpg');
