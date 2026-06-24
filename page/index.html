@@ -8,98 +8,95 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
-        rel="stylesheet">
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400..700&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
 </head>
 
-<body
-    style="font-family: 'Roboto', sans-serif; background-image: url('./cavewall.jpg'); background-repeat: no-repeat; background-position: center; background-size: contain; background-color: #222; margin: 0; background-size: 200vh 100vw;">
-    <div id="navbar" style="display: flex; justify-content: space-between; background-color: rgb(0, 0, 0)">
-
-        <h1 style="color:white; font-size: 1.5rem; margin-left: 1rem; font-family: 'Caveat', cursive;">
+<body>
+    <div id="navbar">
+        <h1 id="navbarTitle">
             <strong>Caveman Web OS</strong>
         </h1>
 
-        <h1 id="currentTime"
-            style="color: white; font-size: 1.5rem; margin-right: 1rem; font-family: 'Roboto', sans-serif;">
+        <h1 id="currentTime">
             00:00 AM - 01/01/2000BC
         </h1>
     </div>
 
-    <div id="dock"
-        style="position: absolute; background-color: rgba(0, 0, 0, 0.8); height: 60px; position: absolute; bottom: 1%; left: 50%; width: 90%; transform: translateX(-50%); display: flex; justify-content: space-evenly; align-items: center; border-radius: 1rem;">
+    <div id="dock">
+        <span id="campfireIcon">
+            <img src="./campfire_icon.svg" alt="Campfire Icon" id="campfireIMG" class="dockImage">
+        </span>
 
-        <!-- <h1 style="color: white; font-size: 1.2rem; margin: 0; font-family: 'Montserrat', sans-serif;"> -->
-            <span id="campfireIcon">
-                <img src="./campfire_icon.svg" alt="Campfire Icon" style="height: 3rem; width: 3rem; border-radius: 0.5rem; padding-top: 0.3rem;" id="campfireIMG">
-            </span>
-            <span id="welcomeIcon">
-                <img src="./WelcomeIconContrast.png" alt="Welcome Icon"
-                    style="height: 3rem; width: 3rem; border-radius: 0.5rem; padding-top: 0.3rem;" id="welcomeIMG"
-                    class="selected">
-            </span>
-            <span id="caveIcon">
-                <img src="./caveIcon.png" alt="Cave Icon"
-                    style="height: 3rem; width: 3rem; border-radius: 0.5rem; padding-top: 0.3rem;" id="caveIMG"
-                    >
-            </span>
-        <!-- </h1> -->
+        <span id="welcomeIcon">
+            <img src="./WelcomeIconContrast.png" alt="Welcome Icon" id="welcomeIMG" class="dockImage selected">
+        </span>
+
+        <span id="caveIcon">
+            <img src="./caveIcon.png" alt="Cave Icon" id="caveIMG" class="dockImage">
+        </span>
     </div>
 
-    <div id="campfire" style="top: 20%; left: 20%; display: none; height: 25rem; width: 56rem; background-color: rgba(20, 20, 20, 0.97); position: fixed; border-radius: 0.5rem; color: orange">
-        <div id="campfireheader" style="display: flex;background-color: rgb(255, 255, 255); padding: 0.5rem; height: 1rem; width: 55rem; border-radius: 0.5rem; color: black;">
-            <span style="font-family: 'Roboto', sans-serif; display: flex; cursor: pointer; width: 1rem; height: 1rem; margin-right: 0.5rem;" id="campfireclose"><img src="./Red-X-Icon.png" alt="Close Icon" style="width: 1rem; height: 1rem;"></span>
+    <div id="campfire">
+        <div id="campfireheader">
+            <span id="campfireclose" class="closeButton">
+                <img src="./Red-X-Icon.png" alt="Close Icon" class="closeIcon">
+            </span>
+
             Campfire - Share a message with other cavepeople!
         </div>
-        <p id="campfireMessages" style="padding-left: 0.5rem; font-family: 'Roboto', sans-serif;">
+
+        <p id="campfireMessages">
             Message: <input type="text" id="message">
-            <span style="display: flex; justify-content: right;">
-                <button style="background-color:orange; border-radius: 0.5rem; font-family: 'Roboto', sans-serif;" onclick="shareMessage()">Share</button>
+
+            <span id="shareButtonArea">
+                <button id="shareButton" onclick="shareMessage()">Share</button>
             </span>
         </p>
-        
-
     </div>
 
-    <div id="welcome" style="height: 25rem; width: 46rem; background-color: rgba(200, 200, 200, 0.97); position: fixed; border-radius: 0.5rem; top: 20%; left: 20%;">
-        <div id="welcomeheader" style="display: flex; background-color: rgb(255, 255, 255); padding: 0.5rem; height: 1rem; width: 45rem; border-radius: 0.5rem;">
-            <span style="font-family: 'Roboto', sans-serif; display: flex; cursor: pointer; width: 1rem; height: 1rem; margin-right: 0.5rem;" id="welcomeclose"><img src="./Red-X-Icon.png" alt="Close Icon" style="width: 1rem; height: 1rem;"></span>
+    <div id="welcome">
+        <div id="welcomeheader">
+            <span id="welcomeclose" class="closeButton">
+                <img src="./Red-X-Icon.png" alt="Close Icon" class="closeIcon">
+            </span>
+
             How to use Caveman OS - Welcome!
         </div>
-        <p style="padding: 0.5rem; font-family: 'Roboto', sans-serif">
-            Welcome to CavemanOS! To get started, try opening some apps. The app icon that looks like a cave is your "easter egg tracker".
-            It shows you all the secrets that you have found (more on that below) and still need to find. Hints can be found by clicking on the icon of the secret you still need to find in the "easter egg tracker app". 
+
+        <p class="windowText">
+            Welcome to CavemanOS! To get started, try opening some apps. The app icon that looks like a cave is your
+            "easter egg tracker".
+            It shows you all the secrets that you have found (more on that below) and still need to find. Hints can be
+            found by clicking on the icon of the secret you still need to find in the "easter egg tracker app".
             <br>
             <br>
-            Apart from that, please make sure to try out other features, such as leaving behind a message in the "Campfire" app for others to see.
+            Apart from that, please make sure to try out other features, such as leaving behind a message in the
+            "Campfire" app for others to see.
             <br>
             <br>
             Once again, thank you for choosing to use CavemanOS. Have fun!
         </p>
-
     </div>
 
-    <div id="cave" style="display: none; height: 25rem; width: 46rem; background-color: rgba(200, 200, 200, 0.97); position: fixed; border-radius: 0.5rem; top: 20%; left: 20%;">
-        <div id="caveheader" style="display: flex; background-color: rgb(255, 255, 255); padding: 0.5rem; height: 1rem; width: 45rem; border-radius: 0.5rem;">
-            <span style="font-family: 'Roboto', sans-serif; display: flex; cursor: pointer; width: 1rem; height: 1rem; margin-right: 0.5rem;" id="caveclose"><img src="./Red-X-Icon.png" alt="Close Icon" style="width: 1rem; height: 1rem;"></span>
+    <div id="cave">
+        <div id="caveheader">
+            <span id="caveclose" class="closeButton">
+                <img src="./Red-X-Icon.png" alt="Close Icon" class="closeIcon">
+            </span>
+
             Easter Egg Tracker
         </div>
-        <p style="padding: 0.5rem; font-family: 'Roboto', sans-serif">
+
+        <p class="windowText">
             e
         </p>
-
     </div>
 
-
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+    <script src="script.js"></script>
 </body>
-<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-<script src="script.js"></script>
+
 </html>
