@@ -16,7 +16,7 @@
 
 <body>
     <div id="navbar">
-        <h1 id="navbarTitle">
+        <h1 id="navbarTitle" onclick="homepageAchievment()">
             <strong>Caveman Web OS</strong>
         </h1>
 
@@ -70,7 +70,7 @@
             Welcome to CavemanOS! To get started, try opening some apps. The app icon that looks like a cave is your
             "easter egg tracker".
             It shows you all the secrets that you have found (more on that below) and still need to find. Hints can be
-            found by clicking on the icon of the secret you still need to find in the "easter egg tracker app".
+            found in the "easter egg tracker".
             <br>
             <br>
             Apart from that, please make sure to try out other features, such as leaving behind a message in the
@@ -91,7 +91,17 @@
         </div>
 
         <p class="windowText">
-            e
+            As of now, there are 2 easter eggs to find:
+            <br>
+            <br>
+            <!-- todo -->
+            <img src="./sentletter.png" alt="First Message!" id="messageIMG" class="notfound">
+            <span id="ach1text"><strong>ooou buga * Hello I'm Bob!</strong> : Leave a "legacy" behind for others to see.</span>
+            <br>
+            <br>
+            <!-- todo -->
+            <img src="./WelcomeIcon.png" alt="welcomeAchievment" id="welcomeAchievmentIMG" class="notfound">
+            <span id="ach2text"><strong>There is no homepage!</strong> : Click on a "homepage" button.</span>
         </p>
     </div>
 

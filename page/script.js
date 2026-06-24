@@ -157,6 +157,20 @@ function shareMessage() {
   let message = document.querySelector('input[id="message"]').value;
 }
 
+let ach2 = 0;
+let ach2text = document.getElementById("ach2text")
+function homepageAchievment() {
+  if (ach2 === 0) {
+    alert("Achievment unlocked: 'There is no homepage!'");
+    ach2 = 1;
+    let ach2img = document.querySelector("#welcomeAchievmentIMG");
+    ach2img.classList.remove("notfound");
+    ach2text.style.textDecoration = "line-through";
+  } else {
+    alert("You already have this, greedy user!");
+  }
+}
+
 
 // doing some supabase stuff
 
