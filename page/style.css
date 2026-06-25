@@ -113,16 +113,19 @@ body {
     display: none;
     height: 25rem;
     width: 46rem;
-    background-color: rgba(200, 200, 200, 0.97);
+    background-color: rgba(236, 155, 15, 0.99);
+    color: gray;
     position: fixed;
     border-radius: 0.5rem;
     top: 20%;
     left: 20%;
+    
 }
 
 #caveheader {
     display: flex;
     background-color: rgb(255, 255, 255);
+    color: black;
     padding: 0.5rem;
     height: 1rem;
     width: 45rem;
@@ -171,6 +174,7 @@ body {
     width: 3rem;
     border-radius: 0.5rem;
     padding-top: 0.3rem;
+    
 }
 
 .notfound {

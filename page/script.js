@@ -166,6 +166,7 @@ function homepageAchievment() {
     let ach2img = document.querySelector("#welcomeAchievmentIMG");
     ach2img.classList.remove("notfound");
     ach2text.style.textDecoration = "line-through";
+    ach2text.style.color = "white";  
   } else {
     alert("You already have this, greedy user!");
   }
