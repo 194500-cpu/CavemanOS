@@ -49,10 +49,13 @@
         </div>
 
         <p id="campfireMessages">
-            Message: <input type="text" id="message">
-
+            
             <span id="shareButtonArea">
-                <button id="shareButton" onclick="shareMessage()">Share</button>
+                Message >> <input type="text" id="message" style="height: 1rem; width: 55%; border-radius: 0.25rem; background: rgb(67, 19, 24); color: white;">
+                <button id="shareButton" onclick="shareMessage()">></button>
+            </span>
+            <span id="previousmessages">
+                [loading messages]
             </span>
         </p>
     </div>
@@ -96,7 +99,7 @@
             <br>
             <!-- todo -->
             <img src="./sentletter.png" alt="First Message!" id="messageIMG" class="notfound">
-            <span id="ach1text"><strong>ooou buga * Hello I'm Bob!</strong> : Leave a "legacy" behind for others to see.</span>
+            <span id="ach1text"><strong>Hello Camp!</strong> : Leave a "legacy" behind for others to see.</span>
             <br>
             <br>
             <!-- todo -->

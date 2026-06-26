@@ -69,7 +69,7 @@ body {
     display: none;
     height: 25rem;
     width: 56rem;
-    background-color: rgba(20, 20, 20, 0.97);
+    background-color: rgba(20, 20, 20, 0.99);
     position: fixed;
     border-radius: 0.5rem;
     color: orange;
@@ -88,6 +88,8 @@ body {
 #campfireMessages {
     padding-left: 0.5rem;
     font-family: 'Roboto', sans-serif;
+    
+    
 }
 
 #welcome {
@@ -153,13 +155,21 @@ body {
 
 #shareButtonArea {
     display: flex;
-    justify-content: right;
+    justify-content: left;
 }
 
 #shareButton {
+    margin-bottom: 0.5rem;
     background-color: orange;
     border-radius: 0.5rem;
     font-family: 'Roboto', sans-serif;
+    margin-left: 0.5rem;
+    padding-right: 0.1rem;
+    padding-left: 0.1rem;
+    align-content: center;
+    font-size: 1rem;
+    font-weight: bold;
+    
 }
 
 #messageIMG {
@@ -180,4 +190,14 @@ body {
 .notfound {
     filter: grayscale(100%);
     filter: brightness(30%);
+}
+
+.messagebox {
+    background-color: rgba(77, 90, 77, 0.696);
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+    max-width: 100%;
+    height: auto;
+    width: fit-content;
 }

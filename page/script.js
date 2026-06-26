@@ -153,10 +153,6 @@ navBar.style.zIndex = biggestIndex + 1;
 dock.style.zIndex = biggestIndex + 1;
 
 
-function shareMessage() {
-  let message = document.querySelector('input[id="message"]').value;
-}
-
 let ach2 = 0;
 let ach2text = document.getElementById("ach2text")
 function homepageAchievment() {
@@ -177,5 +173,82 @@ function homepageAchievment() {
 
 const url = "https://tgpokcloaaefyrqzxbob.supabase.co";
 const key = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRncG9rY2xvYWFlZnlycXp4Ym9iIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODIyNDA4NzgsImV4cCI6MjA5NzgxNjg3OH0.JvkSko3QizB2kYnHjTM2qHoW3nNj65BjXPw2k5ieGzk";
+const Supabase = window.supabase.createClient(url, key);
 
-const Supabase = supabase.createClient(url, key);
+let ach1 = 0;
+
+async function shareMessage() {
+  let message = document.getElementById('message');
+  let messageText = message.value;
+
+  if (messageText === "") {
+    alert("Say something!");
+    return 0;
+  }
+  if (messageText.length > 100) {
+    alert("100 characters max!");
+    return 0;
+  }
+    let { data, error } = await Supabase
+      .from('campfire_messages')
+      .insert([
+        {message: messageText} 
+      ]);
+    if (error) {
+      alert("Error" + error.message);
+    }
+    message.value = ""; 
+    getMessages();
+    if (ach1 === 0) {
+      firstmessageachievment();
+      ach1 = 1;
+    }
+    return 1;
+}
+
+
+async function getMessages() {
+  let messages = []
+  let {data, error} = await Supabase
+  .from('campfire_messages')
+  .select('*')
+  .order('id', { ascending: false })
+  if (error) {
+      alert("Error" + error.message);
+    }
+  previous = document.getElementById("previousmessages");
+  previous.innerHTML = "";
+  for (let i = 1; i <= data.length; i++) {
+    let message = data[i-1];
+    messages.push(message.message);
+  }
+  let messageDiv = 0;
+  for (let j = 0; j < messages.length; j++) {
+    messageDiv = document.createElement("div");
+    messageDiv.innerHTML = messages[j];
+    messageDiv.classList.add("messagebox");
+    previous.appendChild(messageDiv);
+  }
+  }
+
+getMessages();
+
+Supabase
+  .channel('update')
+  .on('postgres_changes', { event: 'INSERT', schema: 'public', table: 'campfire_messages' }, (payload) => {
+    getMessages();
+  }
+)
+  .subscribe();
+
+
+
+function firstmessageachievment() {
+  alert("Achievment unlocked: 'Hello Camp!'");
+  let ach1img = document.querySelector("#campfireAchievmentIMG");
+  ach1img.classList.remove("notfound");
+  let ach1text = document.getElementById("ach1text");
+  ach1text.style.textDecoration = "line-through";
+  ach1text.style.color = "white";
+
+}
