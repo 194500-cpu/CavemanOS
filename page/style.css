@@ -1,6 +1,7 @@
 #campfireMessages {
     overflow-y: auto;
-    height: 25vw;
+    height: 20vh;
+    max-height: 41vh;
 }
 .selected {
   filter: brightness(0.5)

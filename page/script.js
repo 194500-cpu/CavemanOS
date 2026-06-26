@@ -245,7 +245,7 @@ Supabase
 
 function firstmessageachievment() {
   alert("Achievment unlocked: 'Hello Camp!'");
-  let ach1img = document.querySelector("#campfireAchievmentIMG");
+  let ach1img = document.querySelector("#messageIMG");
   ach1img.classList.remove("notfound");
   let ach1text = document.getElementById("ach1text");
   ach1text.style.textDecoration = "line-through";
