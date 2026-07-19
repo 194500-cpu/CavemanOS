@@ -346,4 +346,32 @@ function firstmessageachievment() {
   ach1text.style.textDecoration = "line-through";
   ach1text.style.color = "white";
 
-}
+} 
+
+  
+window.alert = function(message) {
+  Swal.fire({
+    title: '',
+    text: message,
+    icon: 'info',
+    confirmButtonText: 'OK'
+  });
+};
+
+//future plans for this project and a guide on how to make a new app:
+// Plans: date and time on when the messages were sent in the campfire
+// one more achievement involving a minigame of some sorts (putting out the fire? idk)
+// HOW TO MAKE A NEW APP IN CAVEMAN OS
+//1) head over to the dock div and add a new image and text for the app.
+//2) create a new div for the app itself.
+//3) go in java script and add listeners for the close button, screen and app icon
+//4) all done!
+//
+//how to make a new achievement:
+//1) go to the easter egg app and add a new icon and text for the achievement
+//2) go in css to style the icon
+//3) add the required button/function triggering a js function
+//4) make a variable with whether the achievement has been made, eg ach5
+//5) make a achievement function
+//6) apply class to the image and strikethrough the text and make it white
+//7) add an alert saying you got the
