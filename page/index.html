@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Caveman Web OS</title>
+    <title>Caveman Web OS - Version 2.0</title>
     <link rel="stylesheet" href="./style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,6 +15,12 @@
 </head>
 
 <body>
+    <div id="endingOverlay">
+    <img src="./ending1.png" alt="Bob ending">
+    </div>
+
+
+
     <div id="navbar">
         <h1 id="navbarTitle" onclick="homepageAchievment()">
             <strong>Caveman Web OS</strong>
@@ -37,7 +43,14 @@
         <span id="caveIcon">
             <img src="./caveIcon.png" alt="Cave Icon" id="caveIMG" class="dockImage">
         </span>
+
+
+        <span id="Smart Caveman">
+            <img src="./AIIMG.png" alt="Caveman AI" id="AIIMG" class="dockImage">
+        </span>
+        
     </div>
+
 
     <div id="campfire">
         <div id="campfireheader">
@@ -73,7 +86,7 @@
             Welcome to CavemanOS! To get started, try opening some apps. The app icon that looks like a cave is your
             "easter egg tracker".
             It shows you all the secrets that you have found (more on that below) and still need to find. Hints can be
-            found in the "easter egg tracker".
+            found in the "easter egg tracker". A caveman once told me it hides secrets apart from just achievments...
             <br>
             <br>
             Apart from that, please make sure to try out other features, such as leaving behind a message in the
@@ -81,6 +94,9 @@
             <br>
             <br>
             Once again, thank you for choosing to use CavemanOS. Have fun!
+            <br>
+            <br>
+            PS: Don' tell Bob, but I found all the secrets... here is a youtube video on how to find them if you are struggling.
         </p>
     </div>
 
@@ -94,7 +110,7 @@
         </div>
 
         <p class="windowText">
-            <span style="color: black;">As of now, there are 2 easter eggs to find:</span>
+            <span style="color: black;">As of now, there are 4 easter eggs to find:</span>
             <br>
             <br>
             <!-- todo -->
@@ -105,9 +121,33 @@
             <!-- todo -->
             <img src="./WelcomeIcon.png" alt="welcomeAchievment" id="welcomeAchievmentIMG" class="notfound">
             <span id="ach2text"><strong>There is no homepage!</strong> : Click on a "homepage" button.</span>
+            <br>
+            <br>
+            <img src="./clickicon.png" alt="Click achievment" id="clickIMG" class="notfound">
+            <span id="ach3text"><strong>STOP CLICKING ME, IM OPEN!</strong></span>
+            <br>
+            <br>
+            <img src="./FlintSteelIMG.webp" alt="Fire achievment" id="fireIMG" class="notfound">
+            <span id="ach4text"><strong>make Bob warm</strong></span>
         </p>
     </div>
 
+    <div id="AI">
+        <div id="AIheader">
+            <span id="AIclose" class="closeButton">
+                <img src="./Red-X-Icon.png" alt="Close Icon" class="closeIcon">
+            </span>
+
+            Caveman AI - Abysmal Intelligence
+        </div>
+
+        <p class="windowText">
+                The world's most recent and most backward AI! Ask Bob anything.
+            
+        </p>
+        <input type="text" id="ask">
+        <button id="tellBob" onclick="tellBob()">></button>
+    </div>
     <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
     <script src="script.js"></script>
 </body>

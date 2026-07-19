@@ -10,7 +10,7 @@ setInterval(updateTime, 1000);
 makedragElement(document.getElementById("campfire"));
 makedragElement(document.getElementById("welcome"));
 makedragElement(document.getElementById("cave"));
-
+makedragElement(document.getElementById("AI"));
 
 function makedragElement(element) {
   var initialX = 0;
@@ -71,15 +71,24 @@ var caveScreen = document.querySelector("#cave");
 var caveClose = document.querySelector("#caveclose");
 var caveOpen = document.querySelector("#caveIcon");
 
+var AIScreen = document.querySelector("#AI");
+var AIClose = document.querySelector("#AIclose");
+var AIOpen = document.querySelector("#AIIMG");
 
+
+let opened = 0;
 function closeWindow(element) {
   element.style.display = "none";
+  opened = 0;
 }
 
 
 function openWindow(element) {
   element.style.display = "block";
-
+  opened++
+  if (opened > 9) {
+    ach3()
+  }
   biggestIndex++;
 
   element.style.zIndex = biggestIndex;
@@ -91,7 +100,7 @@ function openWindow(element) {
 let campfireimage = document.getElementById("campfireIMG");
 let welcomeimage = document.getElementById("welcomeIMG");
 let caveimage = document.getElementById("caveIMG");
-
+let AIimage = document.getElementById("AIIMG");
 
 campfireClose.addEventListener("click", function () {
   closeWindow(campfireScreen);
@@ -126,6 +135,17 @@ caveOpen.addEventListener("click", function () {
 });
 
 
+AIClose.addEventListener("click", function () {
+  closeWindow(AIScreen);
+  AIimage.classList.remove("selected");
+});
+
+AIOpen.addEventListener("click", function () {
+  openWindow(AIScreen);
+  AIimage.classList.add("selected");
+});
+
+
 var navBar = document.querySelector("#navbar");
 var dock = document.querySelector("#dock");
 
@@ -134,7 +154,7 @@ var biggestIndex = 1;
 addWindowTapHandling(welcomeScreen);
 addWindowTapHandling(campfireScreen);
 addWindowTapHandling(caveScreen);
-
+addWindowTapHandling(AIScreen);
 
 function handleWindowTap(element) {
   biggestIndex++; 
@@ -168,6 +188,81 @@ function homepageAchievment() {
   }
 }
 
+
+let ach3count = 0;
+
+function ach3() {
+  if (ach3count == 0) {
+    opened = 0;
+    alert("Achievment unlocked: 'Click an app icon 10 times in a row'");
+    ach3count = 1;
+    let ach3img = document.querySelector("#clickIMG");
+    ach3img.classList.remove("notfound");
+    ach3text.style.textDecoration = "line-through";
+    ach3text.style.color = "white"; 
+  } else {
+    alert("YOU CAN STOP CLICKING ME NOW T-T");
+  }
+}
+
+let ach4count = 0;
+
+function tellBob() {
+  let message = document.getElementById('ask');
+  let messageText = message.value;
+
+  if (messageText == "hardgraylightgrayhard" && ach4count == 0) {
+    alert("OO... BOB warm, TOO WARM!")
+    ach4count += 1;
+    const endingOverlay = document.getElementById("endingOverlay");
+    endingOverlay.classList.add("show");
+    endingOverlay.style.display = "flex";
+    endingOverlay.style.opacity = "0";
+    endingOverlay.style.transition = "opacity 1s";
+
+    setTimeout(function () {
+      endingOverlay.style.opacity = "1";
+    }, 10);
+
+    setTimeout(function () {
+      endingOverlay.classList.remove("show");
+      endingOverlay.style.display = "none";
+      alert("Hard achievment unlocked!: Make Bob warm");
+    }, 3000);
+
+    let ach4img = document.querySelector("#fireIMG");
+    ach4img.classList.remove("notfound");
+    ach4text.style.textDecoration = "line-through";
+    ach4text.style.color = "white"; 
+    
+  } else if (messageText == "hardgraylightgrayhard" && ach4count != 0) {
+    alert("Bob no need anymore.");
+  } else if (messageText == ""){
+    alert("Who's there? Speak to Bob!")
+  } else {
+    alert(hint())
+  }
+}
+
+function hint() {
+  const bobHints = [
+  "Bob cold. Bob need something that makes fire.",
+  "Fire can start when two hard things strike together.",
+  "One fire-making tool is called flint and steel.",
+  "Think about what flint looks like: hard and gray.",
+  "Think about steel too: hard and gray.",
+  "The middle part is a lighter gray.",
+  "The answer describes three parts joined together.",
+  "First part: hard gray.",
+  "Middle part: light gray.",
+  "Last part: hard.",
+  "Put the three clues together with no spaces.",
+  "Its hard on both ends, and gray becomes a lighter gray",
+  "hardgray? lightgray? hard?"]
+  
+  let randint = Math.floor(Math.random() * bobHints.length);
+  return(bobHints[randint]);
+}
 
 // doing some supabase stuff
 
