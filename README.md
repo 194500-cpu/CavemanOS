@@ -21,7 +21,7 @@ https://194500-cpu.github.io/CavemanOS/
 * Special ending screens
 * Achievement visuals that change after discovery
 * Custom prehistoric interface and artwork
-
+*Sweet Alert 2 for beautiful alerts
 
 ## How It Works
 
