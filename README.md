@@ -1,7 +1,7 @@
 # Caveman Web OS
 
 Caveman Web OS is an Easter egg hunting game disguised as a prehistoric computer operating system.
-At first, it looks like a simple WebOS with draggable windows and applications. However, different buttons, messages and interactions can reveal hidden achievements. Players can use the Easter Egg Tracker to see what they have discovered and receive clues about secrets they have not found yet.
+At first, it looks like a simple WebOS with draggable windows and applications. However, different buttons, messages and interactions can reveal hidden achievements. Players can use the Easter Egg Tracker to see what they have discovered and receive clues about secrets they have not found yet. In case anyone is struggling, here is a video of me completing all the achievements: https://www.youtube.com/watch?v=Ed1CFRDi-0Q
 
 ## Live Website
 https://194500-cpu.github.io/CavemanOS/
