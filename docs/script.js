@@ -26,8 +26,36 @@ function updateTime() {
   } else if (hour < 10) {
     bobdoing = "KNIFE SHARPEN TIME";
   } else if (hour < 11) {
-    bobdoing = "SNORE, SNORE.";
+    bobdoing = "SUN SO TALL TIME";
+  }  else if (hour < 12) {
+    bobdoing = "BOB LOVE LUNCH TIME";
+  } else if (hour < 13) {
+    bobdoing = "CAVEBALL TIME";
+  } else if (hour < 14) {
+    bobdoing = "MAKING BOW TIME";
+  }  else if (hour < 15) {
+    bobdoing = "MAKING ARROW TIME";
+  } else if (hour < 16) {
+    bobdoing = "SHOOTING ARROW TIME";
+  } else if (hour < 17) {
+    bobdoing = "SUN SO SHORT TIME";
+  } else if (hour < 18) {
+    bobdoing = "SUN GONE TIME";
+  } else if (hour < 19) {
+    bobdoing = "BRUSH TEETH TIME";
+  } else if (hour < 20) {
+    bobdoing = "GO TO SLEEP TIME";
+  } else if (hour < 21) {
+    bobdoing = "ZzZz...";
+  } else if (hour < 22) {
+    bobdoing = "WHY STILL AWAKE TIME";
+  } else if (hour < 23) {
+    bobdoing = "YOU MUST SLEEP TIME";
+  } else {
+    bobdoing = "MIDNIGHT PARTY TIME";
   }
+
+
   var fixedMinutes = String(minutes).padStart(2, '0'); 
   timeText.innerHTML = `${hour}:${fixedMinutes} - Bob what time is it? ${bobdoing}`;
 }
@@ -332,17 +360,18 @@ const messageInput = document.getElementById("message");
 
 messageInput.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
+        event.preventDefault();
         shareMessage();
     }
 });
-const ask = document.getElementById("ask");
+const bobInput = document.getElementById("ask");
 
-messageInput.addEventListener("keydown", function(event) {
+bobInput.addEventListener("keydown", function(event) {
     if (event.key === "Enter") {
+        event.preventDefault();
         tellBob();
     }
 });
-
 async function getMessages() {
   let messages = []
   let {data, error} = await Supabase
