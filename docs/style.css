@@ -12,11 +12,11 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    background-image: url('./cavewall2.jpg');
+    /* background-image: url('./cavewall2.jpg'); */
     background-repeat: no-repeat;
     background-position: center;
     background-size: contain;
-    background-color: #222;
+    background-color: #5e5151;
     margin: 0;
     background-size: 200vh 100vw;
 } 
@@ -93,6 +93,7 @@ body {
     border-radius: 0.5rem;
     top: 20%;
     left: 20%;
+    z-index: 10;
 }
 
 #welcomeheader {

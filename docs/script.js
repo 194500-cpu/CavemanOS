@@ -1,9 +1,37 @@
 function updateTime() {
-  var currentTime = new Date().toLocaleString();
+  var now = new Date();
   var timeText = document.querySelector("#currentTime");
-  timeText.innerHTML = currentTime;
-}
+  var hour = now.getHours();
+  var minutes = now.getMinutes();
+  var bobdoing;
 
+  if (hour < 1) {
+    bobdoing = "BOB SLEEP TIME";
+  } else if (hour < 2) {
+    bobdoing = "Zzzz...";
+  } else if (hour < 3) {
+    bobdoing = "SNORE, SNORE TIME";
+  } else if (hour < 4) {
+    bobdoing = "BOB MUST SLEEP TIME";
+  } else if (hour < 5) {
+    bobdoing = "WAKE UP TIME";
+  } else if (hour < 6) {
+    bobdoing = "BOB EATING BREAKFAST TIME";
+  } else if (hour < 7) {
+    bobdoing = "BOB HUNTING MAMMOTH TIME";
+  } else if (hour < 8) {
+    bobdoing = "MAMMOTH ESCAPED BOB TIME";
+  } else if (hour < 9) {
+    bobdoing = "SUN BATH TIME";
+  } else if (hour < 10) {
+    bobdoing = "KNIFE SHARPEN TIME";
+  } else if (hour < 11) {
+    bobdoing = "SNORE, SNORE.";
+  }
+  var fixedMinutes = String(minutes).padStart(2, '0'); 
+  timeText.innerHTML = `${hour}:${fixedMinutes} - Bob what time is it? ${bobdoing}`;
+}
+updateTime();
 setInterval(updateTime, 1000);
 
 
@@ -149,7 +177,7 @@ AIOpen.addEventListener("click", function () {
 var navBar = document.querySelector("#navbar");
 var dock = document.querySelector("#dock");
 
-var biggestIndex = 1;
+var biggestIndex = 10;
 
 addWindowTapHandling(welcomeScreen);
 addWindowTapHandling(campfireScreen);
@@ -300,7 +328,20 @@ async function shareMessage() {
     }
     return 1;
 }
+const messageInput = document.getElementById("message");
 
+messageInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        shareMessage();
+    }
+});
+const ask = document.getElementById("ask");
+
+messageInput.addEventListener("keydown", function(event) {
+    if (event.key === "Enter") {
+        tellBob();
+    }
+});
 
 async function getMessages() {
   let messages = []
@@ -320,7 +361,7 @@ async function getMessages() {
   let messageDiv = 0;
   for (let j = 0; j < messages.length; j++) {
     messageDiv = document.createElement("div");
-    messageDiv.innerHTML = messages[j];
+    messageDiv.textContent = messages[j];
     messageDiv.classList.add("messagebox");
     previous.appendChild(messageDiv);
   }
@@ -354,7 +395,8 @@ window.alert = function(message) {
     title: '',
     text: message,
     icon: 'info',
-    confirmButtonText: 'OK'
+    confirmButtonText: 'OK',
+    allowOutsideClick: false, 
   });
 };
 
