@@ -200,6 +200,24 @@ body {
     background: white;
 }
 
+#AFKIMG {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 0.5rem;
+    padding-top: 0.3rem;
+    background: white;
+}
+
+#RGBIMG {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 0.5rem;
+    padding-top: 0.3rem;
+    background: white;
+}
+
+
+
 
 .notfound {
     filter: grayscale(100%);
@@ -265,4 +283,10 @@ body {
 
 #endingOverlay.show {
   display: flex;
+}
+
+#cavecontent {
+    overflow-y: auto;
+    overflow-x: hidden;
+    height: 20rem;
 }

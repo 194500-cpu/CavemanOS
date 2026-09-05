@@ -1,5 +1,13 @@
 import * as THREE from "./lib/three.module.js";
 
+
+let rgbmode = false;
+
+window.RGBMODE = function() {
+    rgbmode = true;
+};
+
+
 const scene = new THREE.Scene();
 
 const camera = new THREE.PerspectiveCamera(
@@ -490,12 +498,54 @@ function animate(time) {
         * 0.025;
 
 
-    renderer.render(
-        scene,
-        camera
-    );
 
-}
+    if (rgbmode) {
+
+        const hue = (time * 0.0002) % 1;
+
+        bodyWire.color.setHSL(
+            hue,
+            1,
+            0.5
+        );
+
+        headWire.color.setHSL(
+            (hue + 0.15) % 1,
+            1,
+            0.5
+        );
+
+        trunkWire.color.setHSL(
+            (hue + 0.3) % 1,
+            1,
+            0.5
+        );
+
+        legWire.color.setHSL(
+            (hue + 0.45) % 1,
+            1,
+            0.5
+        );
+
+        tuskMaterial.color.setHSL(
+            (hue + 0.6) % 1,
+            1,
+            0.6
+        );
+
+        tailWire.color.setHSL(
+            (hue + 0.75) % 1,
+            1,
+            0.5
+        );
+    }
+
+        renderer.render(
+            scene,
+            camera
+        );
+
+    }
 
 
 requestAnimationFrame(animate);

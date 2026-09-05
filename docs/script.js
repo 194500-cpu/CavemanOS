@@ -295,7 +295,10 @@ function tellBob() {
     alert("Bob no need anymore.");
   } else if (messageText == ""){
     alert("Who's there? Speak to Bob!")
-  } else {
+  } else if (messageText == "/play") {
+    playgame();
+  }
+  else {
     alert(hint())
   }
 }
@@ -419,6 +422,41 @@ function firstmessageachievment() {
 } 
 
   
+
+
+let ach5 = 0;
+let idleTimer;
+
+function resetIdleTimer() {
+    clearTimeout(idleTimer);
+
+    idleTimer = setTimeout(function () {
+        idleAchievement();
+    }, 100000);
+}
+
+function idleAchievement() {
+    if (ach5 === 0) {
+        ach5 = 1;
+
+        alert("Achievement unlocked: 'WHERE DID HE GO?'");
+
+        let img = document.getElementById("AFKIMG");
+        let text = document.getElementById("ach5text");
+
+        img.classList.remove("notfound");
+        text.style.textDecoration = "line-through";
+        text.style.color = "white";
+    }
+}
+
+document.addEventListener("click", resetIdleTimer);
+
+resetIdleTimer();
+
+
+
+
 window.alert = function(message) {
   Swal.fire({
     title: '',
@@ -428,6 +466,77 @@ window.alert = function(message) {
     allowOutsideClick: false, 
   });
 };
+
+
+
+function playgame() {
+  const bobSchedule = [
+    "BOB SLEEP TIME",              // 0
+    "Zzzz...",                     // 1
+    "SNORE, SNORE TIME",           // 2
+    "BOB MUST SLEEP TIME",         // 3
+    "WAKE UP TIME",                // 4
+    "BOB EATING BREAKFAST TIME",   // 5
+    "BOB HUNTING MAMMOTH TIME",    // 6
+    "MAMMOTH ESCAPED BOB TIME",    // 7
+    "SUN BATH TIME",               // 8
+    "KNIFE SHARPEN TIME",          // 9
+    "SUN SO TALL TIME",            // 10
+    "BOB LOVE LUNCH TIME",         // 11
+    "CAVEBALL TIME",               // 12
+    "MAKING BOW TIME",             // 13
+    "MAKING ARROW TIME",           // 14
+    "SHOOTING ARROW TIME",         // 15
+    "SUN SO SHORT TIME",           // 16
+    "SUN GONE TIME",               // 17
+    "BRUSH TEETH TIME",            // 18
+    "GO TO SLEEP TIME",            // 19
+    "ZzZz...",                     // 20
+    "WHY STILL AWAKE TIME",        // 21
+    "YOU MUST SLEEP TIME",         // 22
+    "MIDNIGHT PARTY TIME"          // 23
+  ];
+  var now = new Date();
+  var hour = now.getHours();
+  var timenow = bobSchedule[hour];
+  var answer = prompt("What time is it?");
+  if (answer == timenow) {
+    alert("OK BOB KNOW TIME NOW");
+    answer = prompt("BOB PAINT MAMMOTH? (YES/NO)");
+    if (answer.toLowerCase() == "yes") {
+      alert("16.8 MILLION COLORS!!!");
+      RGBMAMMOTH();
+    } else {
+      alert("BOB SAD");
+    }
+  } else {
+    alert("BOB DO NOT THINK SO");
+  }
+
+}
+
+function RGBMAMMOTH() {
+  ach6();
+  window.RGBMODE();
+
+
+}
+
+let ach6count = 0;
+
+function ach6() {
+  if (ach6count == 0) {
+    opened = 0;
+    alert("Achievment unlocked: 'Play Bob's game to make the Mammoth rgb'");
+    ach6count = 1;
+    let ach6img = document.querySelector("#RGBIMG");
+    let ach6text = document.getElementById("ach6text");
+    ach6img.classList.remove("notfound");
+    ach6text.style.textDecoration = "line-through";
+    ach6text.style.color = "white"; 
+  }
+}
+
 
 //future plans for this project and a guide on how to make a new app:
 // Plans: date and time on when the messages were sent in the campfire
