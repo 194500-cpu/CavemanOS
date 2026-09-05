@@ -57,7 +57,7 @@ function updateTime() {
 
 
   var fixedMinutes = String(minutes).padStart(2, '0'); 
-  timeText.innerHTML = `${hour}:${fixedMinutes} - Bob what time is it? ${bobdoing}`;
+  timeText.innerHTML = `${hour}:${fixedMinutes} ||| BOB time: ${bobdoing}`;
 }
 updateTime();
 setInterval(updateTime, 1000);
