@@ -144,6 +144,7 @@ function openWindow(element) {
   opened++
   if (opened > 9) {
     ach3()
+    opened = 0;
   }
   biggestIndex++;
 
