@@ -24,6 +24,7 @@ https://194500-cpu.github.io/CavemanOS/
 * Achievement visuals that change after discovery
 * Custom prehistoric interface and artwork
 *Sweet Alert 2 for beautiful alerts
+*Three Js rendering of animated 3d meshes
 
 ## How It Works
 
