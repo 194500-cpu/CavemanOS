@@ -33,7 +33,7 @@ https://194500-cpu.github.io/CavemanOS/
 *STOP CLICKING ME, IM OPEN!: Click an app icon 10 times in a row <Br>
 *make Bob warm: The intended way to solve this was to keep sending any message to Caveman AI. He would then provide clues to the code word. If you entered hardgraylightgrayhard into Caveman AI, the achievement would unlock. <br>
 *Away from Cave: don't click anything for 1 minute<br>
-*Abysmally /play: Enter /play into Caveman AI. When prompted for the time, tell him exactly what the top right corner says. In the top right corner, <br>it should say something like BOB time: (something). You should paste (something), which changes based on time, into the prompt. After this, answering YES will make the 3d Mammoth go RGB. <br>
+*Abysmally /play: Enter /play into Caveman AI. When prompted for the time, tell him exactly what the top right corner says. In the top right corner, it should say something like BOB time: (something). You should paste (something), which changes based on time, into the prompt. After this, answering YES will make the 3d Mammoth go RGB. <br>
 
 ## How It Works
 
