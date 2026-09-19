@@ -1,4 +1,4 @@
-![alt text](image.png)
+<img width="2527" height="897" alt="image" src="https://github.com/user-attachments/assets/cb08e723-3e5a-467c-acbf-035d3453e4ee" />
 
 # Caveman Web OS
 
